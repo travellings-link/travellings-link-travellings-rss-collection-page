@@ -1,0 +1,154 @@
+:root {
+  --content-min-width: 48rem;
+}
+
+.min-width {
+  min-width: min(100%, var(--content-min-width));
+  /* 缩小窗口时优先缩小 margin，触发这个取小函数肯定是 margin=0，此时 100vw 和 100% 应相等 */
+}
+
+.content-width {
+  width: fit-content;
+}
+
+.max-width {
+  max-width: 48rem;
+}
+
+@media (max-width: 767px) {
+  .max-width {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1199px) and (max-width: 1536px) {
+  .max-width {
+    max-width: 56rem;
+  }
+}
+
+@media (min-width: 1537px) and (max-width: 2000px) {
+  .max-width {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 2001px) {
+  .max-width {
+    max-width: 60%;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #525f7f;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #525f7f;
+}
+
+.summary {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+}
+
+body {
+  /* background-color: gray; */
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #525f7f;
+  margin: 0;
+  padding: 0;
+  font-family: overpass;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --theme-color: #a3b7bf;
+  --theme-color-dark: #93A9B4;
+  --scrollbar-thumb-color: #a3b7bf44;
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0.5rem auto;
+  padding: 0 1rem;
+}
+
+div.entry {
+  animation: card-show 0.6s ease-out;
+  transform-origin: center top;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  margin: 1rem auto;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  background-color: #ffffff77;
+  backdrop-filter: blur(10px) saturate(80%);
+  border: solid;
+  border-width: 1px;
+  border-color: #ffffff55;
+  border-radius: 8px;
+  box-shadow: var(--scrollbar-thumb-color) 0px 5px 20px;
+
+  background-color: #ffffff88;
+  outline: dashed;
+  outline-width: 3px;
+  outline-color: #00000000;
+  transition: all .15s ease;
+}
+
+footer {
+  text-align: center;
+}
+
+
+div:hover {
+  outline-color: var(--themecolor);
+  box-shadow: var(--themecolor) 0px 5px 20px;
+  background-color: #ffffff;
+}
+
+h4 {
+  color: #32325d;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.-inset-x-4 {
+  left: -1rem;
+  right: -1rem;
+}
+
+.-inset-y-2 {
+  top: -0.5rem;
+  bottom: -0.5rem;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-20 {
+  z-index: 20;
+}

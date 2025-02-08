@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <title>Travellings RSS Collection Page</title>
+</head>
+
+<body>
+  <h1>Travellings RSS Collection Page</h1>
+  <p> 下一次更新任务开始时间 {{ formatted_next_fetched_time }} </p>
+  <div class="min-width max-width content-width" id="entriesList">
+    {% for entry in entries %}
+    <div class="entry" style="cursor: pointer;">
+      <a href="{{ entry.link }}" one-link-mark="yes">
+        <span class="absolute -inset-x-4 -inset-y-2 z-20"></span>
+      </a>
+      <h3>
+        <span class="relative title"> {{ entry.title }} </span>
+      </h3>
+      发布时间 {{ entry.formatted_published }}
+      <br />
+      <p class="summary">
+        {{ entry.formatted_summary }}
+      </p>
+      <a class="relative z-20" href="{{ entry.link }}" target="_blank" rel="nofollow noopener noreferrer">阅读全文
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  <footer>
+    <div>
+      <p>仅显示最新的 {{ max_entries }} 条记录</p>
+      <p>Released under the BSD-3 License.</p>
+      <p>Copyright © 2020-2025 Travellings Project.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
